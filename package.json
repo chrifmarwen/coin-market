@@ -2,10 +2,13 @@
   "name": "coin-market",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000/",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "d3": "^5.9.1",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-redux": "^6.0.1",
@@ -14,8 +17,14 @@
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0"
   },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  },
   "scripts": {
-    "start": "react-scripts start",
+    "install-all": "yarn install && cd server && yarn install && cd ..",
+    "client": "react-scripts start",
+    "server": "cd server && yarn run start && cd ..",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

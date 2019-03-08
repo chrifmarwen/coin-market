@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import LatestGlobalMetrics from './components/GlobalMetrics/Latest'
+import HistoricalGlobalMetrics from './components/GlobalMetrics/Historical'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+const App = () =>
+  <div className="App">
+    <header className="App-header">
+      <p>
+        Coin-market
+      </p>
+    </header>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-3 col-sm-6 col-12">
+          <LatestGlobalMetrics />
+        </div>
+        <div className="col-md-6 col-sm-6 col-12">
+          <HistoricalGlobalMetrics />
+        </div>
+        <div className="col-sm-3 col-12">
+          One of three columns
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  </div>
 
-export default App;
+export default App

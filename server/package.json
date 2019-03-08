@@ -1,0 +1,24 @@
+{
+  "name": "coin-market-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon index.js",
+    "debug-server": "nodemon %NODE_DEBUG_OPTION% index.js",
+    "test": "mocha **/*test.js --recursive",
+    "test-with-coverage": "nyc mocha **/*test.js --recursive"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "config": "^3.0.1",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "njstrace": "^1.1.0",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0"
+  }
+}

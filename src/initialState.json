@@ -1,0 +1,40 @@
+{
+  "globalMetrics": {
+    "latest": {
+      "data": {
+        "active_cryptocurrencies": "",
+        "active_market_pairs": "",
+        "active_exchanges": "",
+        "eth_dominance": "",
+        "btc_dominance": "",
+        "quote": {
+          "USD": {
+            "total_market_cap": "",
+            "total_volume_24h": "",
+            "last_updated": ""
+          }
+        },
+        "last_updated": ""
+      },
+      "loading": false,
+      "error": null
+    },
+    "historical": {
+      "quotes": [
+        {
+          "timestamp": "",
+          "btc_dominance": "",
+          "quote": {
+            "USD": {
+              "total_market_cap": "",
+              "total_volume_24h": "",
+              "timestamp": ""
+            }
+          }
+        }
+      ],
+      "loading": false,
+      "error": null
+    }
+  }
+}
