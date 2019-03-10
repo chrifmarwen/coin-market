@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchCryptoCurrencies } from '../../actions/CryptoCurrencies/cryptoCurrenciesActions'
 import Table from './Table'
-
 import style from './style.css'
 
 class CryptoCurrencies extends Component {
@@ -15,9 +14,17 @@ class CryptoCurrencies extends Component {
   render() {
     const { loading, data } = this.props
 
-    return <div>
-      <Table data={data} />
-    </div>
+    if (loading) {
+      return <div className="d-flex justify-content-center">
+        <div className="spinner-grow text-primary m-5" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    } else {
+      return <div>
+        <Table data={data} />
+      </div>
+    }
   }
 }
 
