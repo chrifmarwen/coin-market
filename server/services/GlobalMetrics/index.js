@@ -11,22 +11,19 @@ let myInit = {
   mode: 'no-cors'
 }
 
+const LATEST_GLOBAL_METRICS = 'latest_global_metrics'
+
 class GlobalMetrics extends ServiceProvider {
 
   constructor() {
     super()
     this.getLatestGlobalMetrics = this.getLatestGlobalMetrics.bind(this)
-    this.on('latest_global_metrics_BEGIN', this.getLatestGlobalMetrics)
-    this.getHistoricalGlobalMetrics = this.getHistoricalGlobalMetrics.bind(this)
-    this.on('historical_global_metrics_BEGIN', this.getHistoricalGlobalMetrics)
+    this.on(LATEST_GLOBAL_METRICS + '_BEGIN', this.getLatestGlobalMetrics)
   }
 
   static validate(method) {
     switch (method) {
-      case 'latest_global_metrics': {
-        return []
-      }
-      case 'historical_global_metrics': {
+      case LATEST_GLOBAL_METRICS: {
         return []
       }
       default:
@@ -42,22 +39,9 @@ class GlobalMetrics extends ServiceProvider {
   async getLatestGlobalMetrics({}) {
     return axios.get(config.get('coinMarketBaseUrl') + config.get('latestGlobalMetricsRoute'), myInit)
       .then(json => {
-        this.emit('latest_global_metrics' + '_SUCCESS', null, { data: json.data.data })
+        this.emit(LATEST_GLOBAL_METRICS + '_SUCCESS', null, { data: json.data.data })
       })
-      .catch(error => this.emit('latest_global_metrics' + '_FAILURE', null, error))
-  }
-
-  /**
-   *
-   * @param orders
-   * @returns {Promise<void>}
-   */
-  async getHistoricalGlobalMetrics({}) {
-    return axios.get(config.get('coinMarketBaseUrl') + config.get('historicalGlobalMetricsRoute'), myInit)
-      .then(json => {
-        this.emit('historical_global_metrics' + '_SUCCESS', null, { data: json.data.data })
-      })
-      .catch(error => this.emit('historical_global_metrics' + '_FAILURE', null, error))
+      .catch(error => this.emit(LATEST_GLOBAL_METRICS + '_FAILURE', null, error))
   }
 }
 

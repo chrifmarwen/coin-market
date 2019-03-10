@@ -6,10 +6,10 @@ const routes = [
     provider: '../services/GlobalMetrics'
   },
   {
-    name: 'historical_global_metrics',
-    route: '/global-metrics/historical',
+    name: 'crypto_currencies_list',
+    route: '/currencies/latest',
     method: 'GET',
-    provider: '../services/GlobalMetrics'
+    provider: '../services/CryptoCurrencies'
   }
 ]
 module.exports.routes = routes

@@ -59,6 +59,7 @@ const providerInject = (routeDefinition, getParams, req, res) => {
         res.json({ status: 200, ...result })
       })
       provider.on(routeDefinition.name + '_FAILURE', function (err) {
+        console.error(err)
         res.json({ status: 500, message: err })
       })
       provider.emit(routeDefinition.name + '_BEGIN', getParams(req))

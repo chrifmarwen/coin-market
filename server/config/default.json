@@ -1,6 +1,8 @@
 {
   "coinMarketBaseUrl": "https://sandbox-api.coinmarketcap.com/v1",
   "latestGlobalMetricsRoute": "/global-metrics/quotes/latest",
-  "historicalGlobalMetricsRoute": "/global-metrics/quotes/historical",
+  "cryptoCurrenciesQuotes": "/cryptocurrency/quotes/latest",
+  "cryptoCurrencyMetadata": "/cryptocurrency/info",
+  "cryptoCurrencyListing": "/cryptocurrency/listings/latest",
   "apiKey": "8cd5bde4-c102-488d-a13b-61126288b412"
 }

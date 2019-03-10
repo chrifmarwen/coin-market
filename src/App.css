@@ -41,3 +41,18 @@
 .latestGlobalMetricsList {
     text-align: left;
 }
+
+line {
+    stroke: black;
+}
+
+path {
+    stroke: darkblue;
+    fill: none;
+}
+
+.logo {
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+}

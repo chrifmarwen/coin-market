@@ -9,6 +9,7 @@ class ServiceProvider extends EventEmitter {
   static validate(method) {
     throw new Error('Validate function is not implemented for this route.')
   }
+
 }
 
 module.exports = ServiceProvider
